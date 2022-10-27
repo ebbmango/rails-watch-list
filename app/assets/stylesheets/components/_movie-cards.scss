@@ -1,0 +1,22 @@
+.movie-card-scrollbar {
+
+  &::-webkit-scrollbar {
+    width: 1px;
+  }
+
+}
+
+.movie-card {
+  width: 250px;
+  height: 300px;
+  overflow: auto
+}
+
+.border-radius-30 {
+  border-radius: 30px;
+}
+
+.movie-poster {
+  width: 250px;
+  height: 375px;
+}
