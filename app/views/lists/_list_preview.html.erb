@@ -1,0 +1,46 @@
+<div class="card col-auto m-3 p-0 list-preview-card">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item text-center">
+        <%= link_to list.name, list_path(list), class: 'link-clean'%>
+      </li>
+      <% if list.bookmarks.empty? %>
+        <li class="list-group-item d-flex align-items-center justify-content-center">
+          <p class="card-text text-muted">Empty list</p>
+        </li>
+      <% else %>
+        <div id="carouselIndicators<%= list.id %>" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <% list.bookmarks.each_with_index do |bookmark, index| %>
+              <% if index.zero? %>
+                <button type="button" data-bs-target="#carouselIndicators<%= list.id %>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <% else %>
+                <button type="button" data-bs-target="#carouselIndicators<%= list.id %>" data-bs-slide-to="<%= index %>" aria-label="Slide <%= index + 1 %>"></button>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="carousel-inner">
+            <% list.bookmarks.each_with_index do |bookmark, index| %>
+              <% if index.zero? %>
+                <div class="carousel-item active">
+              <% else %>
+                <div class="carousel-item">
+              <% end %>
+              <img src="<%= Movie.find(bookmark.movie_id).poster_url %>" class="d-block w-100" alt="...">
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators<%= list.id %>" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators<%= list.id %>" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      <% end %>
+      <li class="list-group-item text-center">
+        <%= link_to 'Delete list', list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'link-clean text-danger'%>
+      </li>
+    </ul>
+  </div>

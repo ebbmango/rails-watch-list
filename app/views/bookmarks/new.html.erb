@@ -14,8 +14,12 @@
     <% end %>
   </div>
 
-  <div class="row mt-4">
-    <p class="text-center">Select a movie from the dropdown above or from the gallery below</p>
+  <div class="text-center mt-4">
+    <%= link_to 'Back to list', list_path(@list), class: 'link-clean' %>
+    <p class="mt-3">Select a movie from the dropdown above or from the gallery below</p>
+  </div>
+
+  <div class="row mt-5">
     <% Movie.all.each do |movie| %>
       <div class="col mb-3">
         <%= render 'movie-card', movie: movie %>

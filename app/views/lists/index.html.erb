@@ -1,8 +1,15 @@
 <div class="container mt-4">
-
+  <%# div class="text-center"> %>
+  <div class="text-center">
+  <h1>All lists</h1>
+  <p class="text-muted">There is a total of <%= @lists.count %> list<%= 's' if @lists.count != 1 %></p>
   <%= link_to 'Create new list', new_list_path, class: 'btn btn-primary' %>
+  </div>
 
-  <% @lists.each do |list| %>
-    <%= link_to list.name, list_path(list) %>
-  <% end %>
+  <div class="row d-flex justify-content-center mt-4">
+    <% @lists.each do |list| %>
+      <%= render 'list_preview', list: list %>
+    <% end %>
+</div>
+
 </div>

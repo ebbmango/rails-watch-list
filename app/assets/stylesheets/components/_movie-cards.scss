@@ -1,10 +1,16 @@
-.hidden-scrollbar {
+// SHARED
 
+.hidden-scrollbar {
   &::-webkit-scrollbar {
     width: 1px;
   }
-
 }
+
+.link-clean {
+  text-decoration: none;
+}
+
+// MOVIE CARDS
 
 .movie-card {
   width: 250px;
@@ -12,12 +18,8 @@
   overflow: auto
 }
 
-.bookmark-card {
-  width: 500px;
-  height: 375px;
-}
-
-.height-bookmark-card {
+.movie-poster {
+  width: 250px;
   height: 375px;
 }
 
@@ -25,8 +27,14 @@
   border-radius: 30px;
 }
 
-.movie-poster {
-  width: 250px;
+// BOOKMARK CARDS
+
+.bookmark-card {
+  width: 500px;
+  height: 375px;
+}
+
+.height-bookmark-card {
   height: 375px;
 }
 
@@ -41,4 +49,11 @@
   // top: 0px
   left: calc(50% - 20px);
   top: calc(100% - 20px);
+}
+
+// LIST PREVIEW CARDS
+
+.list-preview-card {
+  width: 18rem;
+  border-radius: 2px
 }

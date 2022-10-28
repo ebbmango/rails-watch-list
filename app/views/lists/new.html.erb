@@ -1,6 +1,13 @@
 <div class="container mt-4">
-  <%= simple_form_for(@list) do |f| %>
-    <%= f.input :name %>
-    <%= f.submit 'Create list', class: 'btn btn-primary' %>
-  <% end %>
+
+  <h1 class="text-center mb-4">New list</h1>
+
+  <div class="card p-3 col-6 mx-auto">
+    <%= simple_form_for(@list) do |f| %>
+      <%= f.input :name, label: 'List name', placeholder: 'Unique name for a new list' %>
+      <div class="text-center">
+        <%= f.submit 'Create list', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
 </div>
