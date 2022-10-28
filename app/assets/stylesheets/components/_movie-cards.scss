@@ -1,4 +1,4 @@
-.movie-card-scrollbar {
+.hidden-scrollbar {
 
   &::-webkit-scrollbar {
     width: 1px;
@@ -12,6 +12,15 @@
   overflow: auto
 }
 
+.bookmark-card {
+  width: 500px;
+  height: 375px;
+}
+
+.height-bookmark-card {
+  height: 375px;
+}
+
 .border-radius-30 {
   border-radius: 30px;
 }
@@ -19,4 +28,17 @@
 .movie-poster {
   width: 250px;
   height: 375px;
+}
+
+.btn-round {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.position-delete {
+  position: absolute;
+  // top: 0px
+  left: calc(50% - 20px);
+  top: calc(100% - 20px);
 }

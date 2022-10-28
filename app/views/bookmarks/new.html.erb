@@ -1,0 +1,26 @@
+<% movies_collection = Movie.all.map { |movie| [movie.title, movie.id] } %>
+
+<div class="container mt-4">
+
+  <h1 class="text-center mb-4">New bookmark for <strong><%= @list.name %></strong></h1>
+
+  <div class="card p-3 col-6 mx-auto">
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.input :comment %>
+      <%= f.input :movie_id, collection: movies_collection %>
+      <div class="text-end">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row mt-4">
+    <p class="text-center">Select a movie from the dropdown above or from the gallery below</p>
+    <% Movie.all.each do |movie| %>
+      <div class="col mb-3">
+        <%= render 'movie-card', movie: movie %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

@@ -3,13 +3,13 @@
     <img src="<%= movie.poster_url %>" class="movie-poster border-radius-30" alt="">
   </a>
   <div class="ms-2 me-5 collapse collapse-horizontal" id="collapseMovie<%= movie.id %>">
-    <div class="card p-3 movie-card-scrollbar movie-card border-radius-30">
+    <div class="card p-3 hidden-scrollbar movie-card border-radius-30">
       <h5 class="card-title text-center"><strong><%= movie.title %></strong></h5>
       <p class="card-subtitle text-center text-muted mb-1">Rating: <%= movie.rating %></p>
       <p><%= movie.overview %></p>
     </div>
       <div class="text-center">
-        <button class="btn btn-primary col-10 mt-2 text-nowrap border-radius-30">Bookmark this movie</button>
+        <button data-controller="movie-button" data-action="click->movie-button#select" data-movie="<%= movie.id %>"class="btn btn-primary col-10 mt-2 text-nowrap border-radius-30">Bookmark this movie</button>
       </div>
   </div>
 </div>

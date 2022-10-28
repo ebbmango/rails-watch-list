@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <div class="text-center">
+    <h1><%= @list.name %></h1>
+    <p class="text-muted">There is a total of <%= @list.bookmarks.count %> bookmark<%= 's' if @list.bookmarks.count != 1 %></p>
+    <%= link_to 'Bookmark a movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
+  </div>
+
+  <div class="row mt-4">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="col d-flex justify-content-center">
+        <%= render 'bookmark-card', bookmark: bookmark %>
+      </div>
+    <% end %>
+  </div>
+</div>

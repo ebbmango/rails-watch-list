@@ -1,0 +1,19 @@
+<% movie = Movie.find(bookmark.movie_id) %>
+<div class="card mb-5 bookmark-card">
+  <div class="row g-0">
+    <div class="col-md position-relative">
+      <img src="<%= movie.poster_url %>" class="img-fluid rounded-start movie-poster" alt="...">
+    <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <button class="btn btn-danger text-white btn-round position-delete"><i class="fa-solid fa-trash"></i></button>
+    <% end %>
+    </div>
+    <div class="col-md overflow-auto height-bookmark-card hidden-scrollbar">
+      <div class="card-body">
+        <h5 class="card-title text-center"><strong><%= movie.title %></strong></h5>
+        <p class="card-subtitle text-center text-muted mb-1">Rating: <%= movie.rating %></p>
+        <h5 class="text-muted mt-4">Comment:</h5>
+        "<%= bookmark.comment %>"
+      </div>
+    </div>
+  </div>
+</div>
