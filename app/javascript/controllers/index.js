@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import MovieButtonController from "./movie_button_controller"
 application.register("movie-button", MovieButtonController)
+
+import NavbarController from "./navbar_controller"
+application.register("navbar", NavbarController)
