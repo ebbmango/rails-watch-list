@@ -79,3 +79,6 @@ gem 'rails-controller-testing', group: [ :test ]
 # Adds REST CLIENT & JSON gems to use with The Movie Database API
 gem 'rest-client'
 gem 'json'
+
+# Needed for using Postgresql Database
+gem "pg"
