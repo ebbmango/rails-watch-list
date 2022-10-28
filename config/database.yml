@@ -1,18 +1,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
 
 development:
   <<: *default
-  database: rails_watch_list_development
+  database: rails-watch-list_development
 
 test:
   <<: *default
-  database: rails_watch_list_test
-
-production:
-  <<: *default
-  database: rails_watch_list_production
-  username: rails_watch_list
-  password: <%= ENV["RAILS_WATCH_LIST_DATABASE_PASSWORD"] %>
+  database: rails-watch-list_test
