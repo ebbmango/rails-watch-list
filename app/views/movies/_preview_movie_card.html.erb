@@ -1,15 +1,12 @@
 <div class="d-flex align-items-center">
   <a data-bs-toggle="collapse" href="#collapseMovie<%= movie.id %>" role="button" aria-expanded="false" aria-controls="collapseMovie<%= movie.id %>">
-    <img src="<%= movie.poster_url %>" class="movie-poster" alt="">
+    <img src="<%= movie.poster_url %>" class="movie-poster border-radius-30" alt="">
   </a>
   <div class="ms-2 me-5 collapse collapse-horizontal" id="collapseMovie<%= movie.id %>">
-    <div class="card p-3 movie-card-scrollbar movie-card">
+    <div class="card p-3 hidden-scrollbar preview-movie-card">
       <h5 class="card-title text-center"><strong><%= movie.title %></strong></h5>
       <p class="card-subtitle text-center text-muted mb-1">Rating: <%= movie.rating %></p>
       <p><%= movie.overview %></p>
     </div>
-      <div class="text-center">
-        <button class="btn btn-primary col-10 mt-2 text-nowrap">Bookmark this movie</button>
-      </div>
   </div>
 </div>

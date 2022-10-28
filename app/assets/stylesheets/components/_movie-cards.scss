@@ -12,9 +12,15 @@
 
 // MOVIE CARDS
 
-.movie-card {
+.select-movie-card {
   width: 250px;
   height: 300px;
+  overflow: auto
+}
+
+.preview-movie-card {
+  width: 250px;
+  height: 375px;
   overflow: auto
 }
 

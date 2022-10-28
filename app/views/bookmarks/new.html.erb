@@ -22,7 +22,7 @@
   <div class="row mt-5">
     <% Movie.all.each do |movie| %>
       <div class="col mb-3">
-        <%= render 'movie-card', movie: movie %>
+        <%= render 'select_movie_card', movie: movie %>
       </div>
     <% end %>
   </div>
