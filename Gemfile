@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+# gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -79,3 +79,6 @@ gem 'rails-controller-testing', group: [ :test ]
 # Adds REST CLIENT & JSON gems to use with The Movie Database API
 gem 'rest-client'
 gem 'json'
+
+# Needed for using Postgresql Database
+gem "pg"
