@@ -5,6 +5,7 @@
   <div class="card p-3 col-6 mx-auto">
     <%= simple_form_for(@list) do |f| %>
       <%= f.input :name, label: 'List name', placeholder: 'Unique name for a new list' %>
+      <%= f.input :photo, as: :file %>
       <div class="text-center">
         <%= f.submit 'Create list', class: 'btn btn-primary' %>
       </div>
