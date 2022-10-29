@@ -85,3 +85,6 @@ gem "pg"
 
 # Enables the use of environment variables
 gem 'dotenv-rails', groups: [:development, :test]
+
+# Enables communication with Claudinary's API for the uploading and external hosting of image resources
+gem 'cloudinary', '~> 1.12.0'
