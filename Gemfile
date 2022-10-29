@@ -82,3 +82,6 @@ gem 'json'
 
 # Needed for using Postgresql Database
 gem "pg"
+
+# Enables the use of environment variables
+gem 'dotenv-rails', groups: [:development, :test]
